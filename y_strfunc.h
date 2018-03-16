@@ -130,7 +130,29 @@ char * y_strrchr(const char *str, char c ){
 	return p;
 }
 
+/*
 
+	对字符串做处理，统计出非法字符的个数（字母，数字以外的字符都为非法字符）
+	char * str ：  被查找的字符串
+
+*/
+int illchar_count(const char * str)
+{
+    int len = strlen(str);
+	int i = 0;
+	int count = 0;
+	int ch = 0;
+	
+	for(i = 0 ; i < len ; i++){
+		ch = *(str+i);
+		if ((ch<=57 && ch>=48)||(ch <=122 && ch>=65))
+		{
+			continue;
+		}
+		count ++;
+	}
+	return count;	
+}
 
 
 
